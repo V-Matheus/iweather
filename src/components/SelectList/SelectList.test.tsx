@@ -26,6 +26,6 @@ describe('Component: SelectList', () => {
     expect(seletedCity).toBeTruthy();
 
     fireEvent.press(seletedCity);
-    expect(onPress).toHaveBeenCalledTimes(1);
+    expect(onPress).toHaveBeenCalledWith(data[0]);
   });
 });
