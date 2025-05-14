@@ -28,4 +28,10 @@ describe('Component: SelectList', () => {
     fireEvent.press(seletedCity);
     expect(onPress).toHaveBeenCalledWith(data[0]);
   });
+
+  it('not should be show options when data props is empty', () => {
+    render(<SelectList data={[]} onChange={() => {}} onPress={() => {}} />);
+    const options = screen.getByTestId('options');
+    expect(options.children).toHaveLength(0);
+  });
 });
